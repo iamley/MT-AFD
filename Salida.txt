@@ -1,0 +1,10 @@
+La entrada  es rechazada
+La entrada 1 es aceptada
+La entrada 11 es rechazada
+La entrada 101 es aceptada
+La entrada 1111 es rechazada
+La entrada 11111 es rechazada
+La entrada 111111 es rechazada
+La entrada 1111111 es rechazada
+La entrada 01010101 es aceptada
+La entrada 111111111 es rechazada
