@@ -30,8 +30,8 @@ def AFD():
 
     # file definition
     entry = open('Entrada.txt')
-    output = open('Salida.txt','w')
-    output = open('Salida.txt','a')
+    output = open('SalidaAFD.txt','w')
+    output = open('SalidaAFD.txt','a')
     lines = entry.readlines()
 
     for i in lines:
@@ -46,6 +46,8 @@ def MT():
     
     # definition of loop stop
     N = 1000 
+    outputMT = open('SalidaMT.txt','w')
+    outputMT = open('SalidaMT.txt','a')
  
     class TuringMachine:
     
@@ -76,9 +78,10 @@ def MT():
             while self.state != 'H' and iter < max_iter: # prevent infinite loop
                 self.step()
                 iter += 1
-            print(self.tape.replace('_', ''), self.state)
+            writeOutput = (self.tape.replace('_', ''))
+            outputMT.write(writeOutput)
+            outputMT.close()
 
-    
     entry = open('Entrada.txt').read()
     input = str(entry)
     program = open('ProgramaMT.txt').read()
