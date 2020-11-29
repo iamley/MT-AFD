@@ -83,8 +83,12 @@ def MT():
     tm = TuringMachine(entry, input)
     tm.run()
 
-contenido = open('Entrada.txt').read()
-if contenido=='':
+content = open('Entrada.txt', 'r')
+sizeFile = len(content.readlines())
+if content=='':
     print("Error: no input file");
-if contenido!='':
+if sizeFile > 2:
+    AFD()
+if sizeFile <= 1:
     MT()
+
