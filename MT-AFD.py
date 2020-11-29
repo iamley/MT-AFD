@@ -49,12 +49,12 @@ def MT():
  
     class TuringMachine:
     
-        def __init__(self, program, input1, state=0):
+        def __init__(self, program, input, state=0):
             self.trf = {}
             self.state = str(state)
             self.tape = ''.join(['_']*N)
             self.head = N // 2   # head is positioned in the middle
-            self.tape = self.tape[:self.head] + input1 + self.tape[self.head:]
+            self.tape = self.tape[:self.head] + input + self.tape[self.head:]
             for line in program.splitlines():
                     s, a, r, d, s1 = line.split(' ')
                     self.trf[s,a] = (r, d, s1)
@@ -78,13 +78,11 @@ def MT():
                 iter += 1
             print(self.tape.replace('_', ''), self.state)
 
-    input1 = '110110_1'
+    
     entry = open('Entrada.txt').read()
     input = str(entry)
-    print(input)
-    print(input1)
     program = open('ProgramaMT.txt').read()
-    tm = TuringMachine(program, input1)
+    tm = TuringMachine(program, input)
     tm.run()
 
 content = open('Entrada.txt', 'r')
@@ -95,4 +93,3 @@ if sizeFile > 2:
     AFD()
 if sizeFile <= 1:
     MT()
-
